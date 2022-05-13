@@ -109,7 +109,10 @@ img {
 }
 
 .contacts .link {
-    color: var(--main-text-color);
+    color: var(--main-text-color);   
+}
+
+.header-contacts .link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -225,13 +228,31 @@ img {
     line-height: 1.71;
 }
 
+.features .icon {
+    width: 70px;
+    height: 70px;
+}
+
+/*Иконки Features фон и позиционирование*/
+.features .icon-thumb {
+    height: 120px;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+
+    background: var(--light-bg);
+    border-radius: 4px;
+}
+
 /* Позиционирование секции Особенности */
 .features .list {
     display: flex;
 }
 
 .features .list > .item {
-    flex-basis: calc(100% / 4);
+    flex-basis: calc((100% - (3 * 30px))/ 4);
 }
 
 .features .item + .item {
