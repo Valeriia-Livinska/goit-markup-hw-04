@@ -6,6 +6,7 @@
     --dark-bg: #2F303A;
     --light-bg: #F5F4FA;
     --hero-bg: #C4C4C4;
+    --icons-cl: #AFB1B8;
 }
 
 body {
@@ -128,7 +129,7 @@ img {
 }
 
 /*Цвет при hover-focus*/
-.contacts .icon {
+.header-contacts .icon {
     fill: currentColor;
     margin-right: 10px;
 }
@@ -228,10 +229,6 @@ img {
     line-height: 1.71;
 }
 
-.features .icon {
-    width: 70px;
-    height: 70px;
-}
 
 /*Иконки Features фон и позиционирование*/
 .features .icon-thumb {
@@ -300,9 +297,49 @@ img {
 }
 
 .member-position {
+    margin-bottom: 16px;
+
     font-size: 16px;
     line-height: 1.19;
 }
+
+.member-socials-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.member-socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    color: var(--icons-cl);
+    text-decoration: none;
+}
+
+.member-socials-icon {
+    fill: currentColor;
+}
+
+.member-socials-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.member-socials-link:hover,
+.member-socials-link:focus {
+    border-radius: 50%;
+    background-color: var(--accent-color);
+}
+
+.member-socials-link:hover .member-socials-icon,
+.member-socials-link:focus .member-socials-icon {
+    fill:#FFFFFF;
+}
+
+
 
 /* Позиционирование секции Наша команда */
 .team .section-title {
@@ -332,6 +369,53 @@ img {
     padding-right: 5px;
 
     text-align: center;
+}
+
+
+/*---- Постоянные клиенты ----*/
+.section-title {
+    margin-bottom: 50px;
+}
+
+.clients .list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.clients .item {
+    height: 92px;
+    flex-basis: calc((100% - (5 * 30px)) / 6);
+}
+
+.clients-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:100%;
+    border: 1px solid var(--icons-cl);
+    border-radius: 4px;
+    color: var(--icons-cl);
+}
+
+.clients .item + .item {
+    margin-left: 30px;
+}
+
+.clients .icon {
+    fill:currentColor;
+}
+
+.clients-link:hover,
+.clients-link:focus {
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.clients-link:hover .icon,
+.clients-link:focus .icon{
+    color: currentColor;
 }
 
 
@@ -377,6 +461,59 @@ img {
     margin-bottom: 9px;
 }
 
+.footer-position {
+    display: flex;
+    align-items: baseline;
+}
+
+.position-address {
+    margin-right: 70px;
+}
+
+/*---- Соц сети в футер ----*/
+.join {
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.footer-socials-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.footer-socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    color: #FFFFFF;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+}
+
+.footer-socials-icon {
+    fill: currentColor;
+}
+
+.footer-socials-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.footer-socials-link:hover,
+.footer-socials-link:focus {
+    background-color: var(--accent-color);
+}
+
+
 
 /*=====================
     Вкладка Портфолио
@@ -405,6 +542,7 @@ img {
 .portfolio-btn:focus {
     color: #FFFFFF;
     background: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Позиционирование и стилизация кнопок фильтра*/
@@ -416,11 +554,6 @@ img {
 
 .button-list > .item + .item {
     margin-left: 8px;
-}
-
-/* Тень на активную кнопку*/
-.portfolio .btn-active {
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 
@@ -444,7 +577,7 @@ img {
     font-size: 16px;
     line-height: 1.88;
     letter-spacing: 0.03em;
-    color: #757575;
+    color: var(--main-text-color);
 }
 
 /* Позиционирование Списка проектов*/
@@ -460,6 +593,7 @@ img {
     flex-basis: calc((100% / 3) - 30px);
     margin-left: 30px;
     margin-bottom: 30px;
+    /*display: inline-block;*/
 }
 
 .project-description {
@@ -471,5 +605,12 @@ img {
     border: 1px solid #EEEEEE;
     border-top: none;
 }
+
+.project-list > .item:hover,
+.project-list > .item:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+
 
 
